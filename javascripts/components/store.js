@@ -1,4 +1,4 @@
-import { addToCart } from './cart.js';
+import { addToCart } from './cartStuff.js';
 
 const makeStore = (array, titles = false) => {
   $("#store").html("");
@@ -13,14 +13,14 @@ const makeStore = (array, titles = false) => {
         $("#store").append(
           `<div class="card">
                   <img class="card-img-top" src=${item.image} alt=${
-            item.title
+          item.title
           } style="height: 400px;">
                   <div class="card-body" style="height: 200px;">
                     <div class="sale-badge">${
-                      item.featured
-                        ? `<span class="badge badge-success">FEATURED</span>`
-                        : ""
-                    }</div>
+          item.featured
+            ? `<span class="badge badge-success">FEATURED</span>`
+            : ""
+          }</div>
                     <h5 class="card-title">${item.title}</h5>
                     <p class="card-text">Price: $${item.price}</p>
                     <button class="btn btn-danger" id="cart-add-${index}">Add to Cart</button>
